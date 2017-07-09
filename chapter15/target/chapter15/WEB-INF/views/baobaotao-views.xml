@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+    <bean id="userListJson"
+          class="org.springframework.web.servlet.view.json.MappingJackson2JsonView"
+          p:modelKey="userList"/>
+
+    <bean id="userListXml"
+    class="org.springframework.web.servlet.view.xml.MarshallingView"
+    p:modelKey="userList" p:marshaller-ref="xmlMarshaller"/>
+
+    <bean id="xmlMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+        <property name="streamDriver">
+            <bean class="com.thoughtworks.xstream.io.xml.StaxDriver"/>
+        </property>
+        <property name="annotatedClasses">
+            <list>
+                <value>com.baobaotao.domain.User</value>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="userListExcel" class="com.baobaotao.web.UserListExcelView"/>
+    <bean id="userListPdf" class="com.baobaotao.web.UserListPdfView"/>
+
+</beans>

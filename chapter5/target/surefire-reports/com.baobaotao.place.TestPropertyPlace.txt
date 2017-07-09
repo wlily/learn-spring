@@ -1,0 +1,45 @@
+-------------------------------------------------------------------------------
+Test set: com.baobaotao.place.TestPropertyPlace
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.219 sec <<< FAILURE!
+test(com.baobaotao.place.TestPropertyPlace)  Time elapsed: 0.219 sec  <<< ERROR!
+java.lang.RuntimeException: javax.crypto.IllegalBlockSizeException: Input length must be multiple of 8 when decrypting with padded cipher
+	at com.baobaotao.placeholder.DESUtils.getDecryptString(DESUtils.java:62)
+	at com.baobaotao.placeholder.EncryptPropertyPlaceholderConfigurer.convertProperty(EncryptPropertyPlaceholderConfigurer.java:11)
+	at org.springframework.beans.factory.config.PropertyResourceConfigurer.convertProperties(PropertyResourceConfigurer.java:106)
+	at org.springframework.beans.factory.config.PropertyResourceConfigurer.postProcessBeanFactory(PropertyResourceConfigurer.java:83)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:284)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:166)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:677)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:519)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.baobaotao.place.TestPropertyPlace.setUp(TestPropertyPlace.java:14)
+	at junit.framework.TestCase.runBare(TestCase.java:139)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:84)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: javax.crypto.IllegalBlockSizeException: Input length must be multiple of 8 when decrypting with padded cipher
+	at com.sun.crypto.provider.CipherCore.doFinal(CipherCore.java:913)
+	at com.sun.crypto.provider.CipherCore.doFinal(CipherCore.java:824)
+	at com.sun.crypto.provider.DESCipher.engineDoFinal(DESCipher.java:314)
+	at javax.crypto.Cipher.doFinal(Cipher.java:2121)
+	at com.baobaotao.placeholder.DESUtils.getDecryptString(DESUtils.java:59)
+	... 30 more
+

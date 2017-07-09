@@ -1,0 +1,54 @@
+-------------------------------------------------------------------------------
+Test set: com.baobaotao.editor.TestCustomerEditor
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.431 sec <<< FAILURE!
+testCustomerCarEditor(com.baobaotao.editor.TestCustomerEditor)  Time elapsed: 0.378 sec  <<< ERROR!
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.beans.factory.config.CustomEditorConfigurer#0' defined in class path resource [editor/beans.xml]: Initialization of bean failed; nested exception is org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.util.LinkedHashMap' to required type 'java.util.Map' for property 'customEditors'; nested exception is java.lang.IllegalArgumentException: Cannot convert value of type [com.baobaotao.editor.CustomCarEditor] to required type [java.lang.Class] for property 'customEditors[com.baobaotao.editor.Car]': PropertyEditor [org.springframework.beans.propertyeditors.ClassEditor] returned inappropriate value of type [com.baobaotao.editor.CustomCarEditor]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:482)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:171)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:677)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:519)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:139)
+	at org.springframework.context.support.ClassPathXmlApplicationContext.<init>(ClassPathXmlApplicationContext.java:93)
+	at com.baobaotao.editor.TestCustomerEditor.setUp(TestCustomerEditor.java:14)
+	at junit.framework.TestCase.runBare(TestCase.java:139)
+	at junit.framework.TestResult$1.protect(TestResult.java:122)
+	at junit.framework.TestResult.runProtected(TestResult.java:142)
+	at junit.framework.TestResult.run(TestResult.java:125)
+	at junit.framework.TestCase.run(TestCase.java:129)
+	at junit.framework.TestSuite.runTest(TestSuite.java:255)
+	at junit.framework.TestSuite.run(TestSuite.java:250)
+	at org.junit.internal.runners.JUnit38ClassRunner.run(JUnit38ClassRunner.java:84)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: org.springframework.beans.TypeMismatchException: Failed to convert property value of type 'java.util.LinkedHashMap' to required type 'java.util.Map' for property 'customEditors'; nested exception is java.lang.IllegalArgumentException: Cannot convert value of type [com.baobaotao.editor.CustomCarEditor] to required type [java.lang.Class] for property 'customEditors[com.baobaotao.editor.Car]': PropertyEditor [org.springframework.beans.propertyeditors.ClassEditor] returned inappropriate value of type [com.baobaotao.editor.CustomCarEditor]
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertIfNecessary(AbstractNestablePropertyAccessor.java:596)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertForProperty(AbstractNestablePropertyAccessor.java:603)
+	at org.springframework.beans.BeanWrapperImpl.convertForProperty(BeanWrapperImpl.java:204)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.convertForProperty(AbstractAutowireCapableBeanFactory.java:1527)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyPropertyValues(AbstractAutowireCapableBeanFactory.java:1486)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1226)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:543)
+	... 31 more
+Caused by: java.lang.IllegalArgumentException: Cannot convert value of type [com.baobaotao.editor.CustomCarEditor] to required type [java.lang.Class] for property 'customEditors[com.baobaotao.editor.Car]': PropertyEditor [org.springframework.beans.propertyeditors.ClassEditor] returned inappropriate value of type [com.baobaotao.editor.CustomCarEditor]
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:298)
+	at org.springframework.beans.TypeConverterDelegate.convertToTypedMap(TypeConverterDelegate.java:655)
+	at org.springframework.beans.TypeConverterDelegate.convertIfNecessary(TypeConverterDelegate.java:222)
+	at org.springframework.beans.AbstractNestablePropertyAccessor.convertIfNecessary(AbstractNestablePropertyAccessor.java:576)
+	... 37 more
+

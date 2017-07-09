@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - sampledb@localhost" uuid="14225756-eaed-4578-8e9c-9ffc338ff76e">
+    <database-info product="MySQL" version="5.5.43-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="sampledb"/>
+    <table name="t_login_log" schema="" catalog="sampledb" type="TABLE">
+      <column name="login_log_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="ip" sqlType="VARCHAR" precision="23" scale="0" nullable="true" jdbcType="12"/>
+      <column name="login_datetime" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="login_log_id"/>
+    </table>
+    <table name="t_user" schema="" catalog="sampledb" type="TABLE">
+      <column name="user_id" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="user_name" sqlType="VARCHAR" precision="30" scale="0" nullable="true" jdbcType="12"/>
+      <column name="credits" sqlType="INT" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="password" sqlType="VARCHAR" precision="32" scale="0" nullable="true" jdbcType="12"/>
+      <column name="last_visit" sqlType="DATETIME" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <column name="last_ip" sqlType="VARCHAR" precision="23" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="user_id"/>
+    </table>
+  </data-source>
+</component>
